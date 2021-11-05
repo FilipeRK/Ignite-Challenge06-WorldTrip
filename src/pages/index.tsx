@@ -1,6 +1,8 @@
 import { Box, Center, Divider, Flex, Heading, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 
 import { Header } from "../components/Header";
+import { Slide } from "../components/Slide";
+import { TravelTypes } from "../components/TravelTypes";
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -70,7 +72,25 @@ export default function Home() {
           justify='space-between' 
           wrap={isWideVersion ? 'nowrap' : 'wrap'}
         >
-         
+          <TravelTypes title='vida noturna'>
+            <Image src='/images/icons/cocktail.svg' maxW='85' />
+          </TravelTypes>
+
+          <TravelTypes title='praia'>
+            <Image src='/images/icons/surf.svg' maxW='85' />
+          </TravelTypes>
+
+          <TravelTypes title='moderno'>
+            <Image src='/images/icons/building.svg' maxW='85' />
+          </TravelTypes>
+
+          <TravelTypes title='clássico'>
+            <Image src='/images/icons/museum.svg' maxW='85' />
+          </TravelTypes>
+
+          <TravelTypes title='e mais...' isLastChild={true}>
+            <Image src='/images/icons/earth.svg' maxW='85' />
+          </TravelTypes>
         </Flex>
           
         <Center w='90px' mx='auto' borderTopWidth='2px' borderColor='gray.600'></Center>
@@ -90,6 +110,7 @@ export default function Home() {
             w='100%'
             h={['250', '450']}
           >
+            <Slide />
           </Box>
         </Box>
       </Box>
