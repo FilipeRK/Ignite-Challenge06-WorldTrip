@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import { Header } from "../../components/Header"
 import { Card } from "../../components/Card"
 import { api } from "../../services/api"
+import { Info } from "../../components/Info"
 
 type ContinentType = {
   id: number;
@@ -94,7 +95,21 @@ export default function Continent({ continent }: ContinentProps) {
           </Text>
 
           <HStack spacing={10} mt={['4', '0']}>
-           
+            <Info 
+              legend="países"
+              numberOf={continent.numberOfCountries}
+            />
+
+            <Info 
+              legend="línguas"
+              numberOf={continent.numberOfLanguages}
+            />
+
+            <Info 
+              legend="cidades +100"
+              numberOf={continent.amountMostPopularCities}
+              hasTooltip={true}
+            />
           </HStack>
         </Flex>
       
